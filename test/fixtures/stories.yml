@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  initial_velocity: 1
+  week_start_day: MyString
+  use_https: false
+  uid: 1
+  iteration_length: 1
+  account: MyString
+  last_activity_at: 2011-08-17 17:23:30
+  velocity_scheme: MyString
+  currency_velocity: 1
+  name: MyString
+  point_scale: MyString
+
+two:
+  initial_velocity: 1
+  week_start_day: MyString
+  use_https: false
+  uid: 1
+  iteration_length: 1
+  account: MyString
+  last_activity_at: 2011-08-17 17:23:30
+  velocity_scheme: MyString
+  currency_velocity: 1
+  name: MyString
+  point_scale: MyString
