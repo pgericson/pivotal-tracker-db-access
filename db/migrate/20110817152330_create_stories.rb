@@ -3,6 +3,7 @@ class CreateStories < ActiveRecord::Migration
     create_table :stories do |t|
       t.integer :pt_id
       t.integer :pt_project_id
+      t.integer :pt_iteration_id
       t.string :story_type
       t.string :url
       t.integer :estimate
@@ -14,6 +15,9 @@ class CreateStories < ActiveRecord::Migration
       t.datetime :pt_created_at
       t.datetime :accepted_at
       t.string :labels
+      t.string :requested_by
+      t.date   :deadline
+      t.integer :rank
 
 
       t.timestamps
