@@ -3,6 +3,9 @@ source 'http://rubygems.org'
 gem 'rails', '3.1.0.rc4'
 gem 'mysql2', '0.3.6'
 gem 'pivotal-tracker', '0.4.1'
+group :development do
+  gem 'ruby-debug'
+end
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'

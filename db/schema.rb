@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(:version => 20110818152715) do
 
   create_table "iterations", :force => true do |t|
+    t.integer  "pt_project_id"
     t.integer  "pt_id"
     t.integer  "number"
     t.datetime "start"

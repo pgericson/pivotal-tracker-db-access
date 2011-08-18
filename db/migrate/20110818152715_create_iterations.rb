@@ -1,6 +1,7 @@
 class CreateIterations < ActiveRecord::Migration
   def change
     create_table :iterations do |t|
+      t.integer :pt_project_id
       t.integer :pt_id
       t.integer :number
       t.datetime :start

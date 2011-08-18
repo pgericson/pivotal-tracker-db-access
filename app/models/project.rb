@@ -8,7 +8,7 @@ class Project < ActiveRecord::Base
            :foreign_key => "pt_project_id"
 
 
-  def self.update_everything
+  def self.update
     all_projects = PivotalTracker::Project.all
     all_projects.each do |project|
       p = self.find_or_create_by_pt_id(project.id)
@@ -16,15 +16,28 @@ class Project < ActiveRecord::Base
     end
   end
 
-  def update_attributes_custom(project)
-    columns = self.class.column_names - %w(created_at updated_at id)
-    columns.inject({}) do |result, column|
-      result.merge(make_hash(column, project))
-      result
+  def self.update_everything
+    Project.update
+    Project.all.each do |project|
+      Story.update(project)
+      Iteration.update(project)
     end
   end
 
-  def make_hash(column, project)
+  def pt
+    PivotalTracker::Project.find(pt_id)
+  end
+
+  def update_attributes_custom(project, params = {})
+    columns = self.class.column_names - %w(created_at updated_at id)
+    result = {}
+    columns.each do |column|
+      result.merge!(get_pt_value(column, project))
+    end
+    update_attributes(result.merge(params))
+  end
+
+  def get_pt_value(column, project)
     instance_variable = column.gsub(/^pt_(.*id)$/,'\1')
     if project.respond_to?(instance_variable)
       {column => project.send(instance_variable)}
