@@ -42,7 +42,7 @@ class Project < ActiveRecord::Base
     if project.respond_to?(instance_variable)
       {column => project.send(instance_variable)}
     else
-      {}
+      {column => nil}
     end
   end
 end

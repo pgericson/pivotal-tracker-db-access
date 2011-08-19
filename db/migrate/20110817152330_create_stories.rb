@@ -16,7 +16,7 @@ class CreateStories < ActiveRecord::Migration
       t.datetime :accepted_at
       t.string :labels
       t.string :requested_by
-      t.date   :deadline
+      t.datetime   :deadline
       t.integer :rank
 
 

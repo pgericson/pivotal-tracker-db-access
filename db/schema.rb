@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(:version => 20110818152715) do
     t.datetime "pt_created_at"
     t.datetime "accepted_at"
     t.string   "labels"
-    t.date     "deadline"
+    t.datetime "deadline"
     t.integer  "rank"
     t.datetime "created_at"
     t.datetime "updated_at"
