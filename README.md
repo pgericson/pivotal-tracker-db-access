@@ -11,12 +11,14 @@ input the following line in the Yaml file
 
     token: your_pivotal_tracker_token_here
 
-save it
+save it the Yaml file
+
 
     cp config/database.yml.example config/database.yml
     vi config/database.yml
 
-Change what needs to be changed
+Change what needs to be changed in regards to the database
+
 
     rake pt:update
 
